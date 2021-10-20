@@ -3,7 +3,7 @@ import { Box, Container } from "@chakra-ui/react";
 
 const Main = ({ children, router }) => {
   return (
-    <div>
+    <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, inital-scale=1" />
         <title>Sabili Maulana - HomePage</title>
@@ -11,7 +11,7 @@ const Main = ({ children, router }) => {
       <Container maxW="container.md" pt={14}>
         {children}
       </Container>
-    </div>
+    </Box>
   );
 };
 
