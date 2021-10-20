@@ -15,6 +15,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import ThemeToggleButton from "../ThemeToggleButton";
 
 const LinkItem = ({ href, path, children }) => {
   const active = path === href;
@@ -75,8 +76,14 @@ const Navbar = (props) => {
         </Stack>
 
         <Box flex={1} align="right">
+          <ThemeToggleButton />
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
-            <Menu>
+            {/* Warning: Prop `id` did not match. Server:
+            "menu-list-menu-menuitem-2" Client: "menu-list-menu-menuitem-4" */}
+            {/* Bug id, from chakra-ui */}
+            {/* https://giters.com/chakra-ui/chakra-ui/issues/4328?amp=1 */}
+            {/* https://github.com/chakra-ui/chakra-ui/issues/3020 */}
+            <Menu isLazy id="menu-button-1">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
