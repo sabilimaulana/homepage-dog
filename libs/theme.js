@@ -9,7 +9,7 @@ const styles = {
   }),
 };
 
-const component = {
+const components = {
   Heading: {
     variants: {
       "section-title": {
@@ -47,7 +47,7 @@ const config = {
 const theme = extendTheme({
   config,
   styles,
-  component,
+  components,
   colors,
   fonts,
 });
